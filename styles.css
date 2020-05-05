@@ -1,0 +1,49 @@
+body {
+  margin: 10px;
+  font-family: "ETmodules";
+  font-size: 16px;
+  font-weight: 800;
+  color: #333333;
+}
+h1 {
+  font-size: 200%;
+  color: #333399;
+  margin: 5px 0;
+}
+h2 {
+  font-size: 150%;
+  color: #ff8000;
+}
+section.center {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr {
+    line-height: 160%;
+}
+
+table thead tr {
+    background: #aaa;
+}
+
+table tr:nth-child(even) {
+    background: #ccc;
+}
+
+table tbody tr td {
+    border-top: 1px #aaa solid;
+    vertical-align: top;
+}
+
+a, a:visited {
+    color: #0066cc;
+    text-decoration: none;
+}
