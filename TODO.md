@@ -1,0 +1,2 @@
+- [ ] add US territories: counties, population and etc.
+- [ ] update/fix zips on 2020 year

@@ -28,13 +28,18 @@ print(f'Read csv with counties: {counties_file}')
 counties = [(r[0], r[1], r[2]) for r in csv.reader(counties_file.open('r'), delimiter=',', quotechar='"')]
 search_county_by_fips = lambda val: ([x for x in counties if x[0] == val] or [None])[0]
 debug(f'Loaded {len(counties)} counties')
+fips_remap = {
+    '46113': '46102',       # Shannon County -> Oglala Lakota County
+    '02270': '02158',       # Wade Hampton Census Area -> Kusilvak Census Area
+    '02261': '02063'        # Valdez-Cordova Census Area -> Chugach Census Area
+}
 
 
 def zip_validation_usps(zip):
-    headers = {'Content-Type': 'application/json', 'User-Agent': 'Chrome'}
+    headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'User-Agent': 'MozillaChrome'}
     post_url = 'https://tools.usps.com/tools/app/ziplookup/cityByZip'
     debug(f'Check {zip} with usps online tool')
-    post_data = urlparse.urlencode({'zip': zip}).encode('utf-8')
+    post_data = (f'zip={zip}').encode('utf-8')
     req = request.Request(post_url, headers=headers)
     resp = request.urlopen(req, data=post_data)
     resp_data = resp.read().decode('utf-8')
@@ -55,15 +60,21 @@ def load_zips_from_huduser():
         debug(f'[{idx:05}] Processing {row}...')
         zip = f'{row[1]:05}'
         fips = f'{row[2]:05}'
-        print(f'ZIP = {zip}, FIPS = {fips}')
+        debug(f'ZIP = {zip}, FIPS = {fips}')
         county = search_county_by_fips(fips)
         if not county:
             if zip_validation_usps(zip):
-                print(f'Error: fips {fips} not found. Zip code {zip} is valid!')
+                new_fips = fips_remap.get(fips)
+                if new_fips:
+                    print(f'[WAR] Fips {fips} not found. Zip code {zip} is valid! Remapping to {new_fips}')
+                    county = [new_fips]
+                else:
+                    print(f'[ERR] Fips {fips} not found. Zip code {zip} is valid!')
             else:
-                print(f'Fips {fips} not found. Zip code {zip} invalid')
-        else:
-            res_zips.append((zip, county))
+                print(f'[ERR] Fips {fips} not found. Zip code {zip} invalid')
+        if county and county[0] is not None:
+            print(f'[OK ] {zip} -> {fips}')
+            res_zips.append((zip, county[0]))
             idx += 1
     return res_zips
 
@@ -73,7 +84,7 @@ with output_file.open('w') as file_writer:
     csv_writer.writerow(['zip', 'fips'])
     zips = load_zips_from_huduser()
     print(f'Found {len(zips)} zips')
-    for zip, county in zips:
-        debug(f'Write {zip}, {county}')
-        csv_writer.writerow([zip, county[0]])
+    for zip, fips in sorted(zips, key=lambda x: (x[0], x[1])):
+        debug(f'Write {zip}, {fips}')
+        csv_writer.writerow([zip, fips])
     print(f'Write {len(zips)} zips with fips into the file {output_file}')

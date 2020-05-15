@@ -71,6 +71,8 @@ fips,state_id,name,latitude,longitude
 02020,AK,Anchorage Municipality,61.231745,-149.890695
 02050,AK,Bethel Census Area,60.784846,-161.801901
 02060,AK,Bristol Bay Borough,58.75056,-156.83333
+02063,AK,Chugach Census Area,61.130833,-146.348333
+02066,AK,Copper River Census Area,62.109722,-145.557222
 02068,AK,Denali Borough,63.948524,-145.742254
 02070,AK,Dillingham Census Area,58.75056,-156.00056
 02090,AK,Fairbanks North Star Borough,64.841836,-147.829549
@@ -91,7 +93,6 @@ fips,state_id,name,latitude,longitude
 02220,AK,Sitka City and Borough,57.046695,-135.288826
 02230,AK,Skagway Municipality,58.29987,-134.406842
 02240,AK,Southeast Fairbanks Census Area,65.041663,-147.416302
-02261,AK,Valdez-Cordova Census Area,61.50056,-144.50056
 02275,AK,Wrangell City and Borough,56.469862,-132.375029
 02282,AK,Yakutat City and Borough,59.549946,-139.735818
 02290,AK,Yukon-Koyukuk Census Area,65.7,-152.71667
