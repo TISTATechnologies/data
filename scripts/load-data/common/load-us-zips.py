@@ -3,6 +3,7 @@
 # Helper script to generate us-zips.csv file
 # * Source: huduser.gov
 # * Source: usps.com (online tool to check zip validation)
+# Save result into the '../../common/us/zips.csv' file
 #
 # requirements: pandas, xlrd
 # #############################################################################

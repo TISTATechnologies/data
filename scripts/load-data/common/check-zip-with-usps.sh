@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# #############################################################################
+# Helper script to check zip code using an online tool from usps.com
+# Usage: check-zip-with-usps.sh <zip code>
+# #############################################################################
 debug() { if [ "${DEBUG}" == "true" ]; then >&2 echo $@; fi; }
 
 check_zip() {

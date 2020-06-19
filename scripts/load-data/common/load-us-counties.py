@@ -3,6 +3,7 @@
 # Helper script to generate us-counties.csv file
 # * Download counties information from census.gov
 # * Download geo-location from datasciencetoolkit.org
+# Save result into the '../../common/us/counties.csv' file
 #
 # requirements: pandas, xlrd
 # #############################################################################

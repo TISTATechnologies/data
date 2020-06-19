@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # #############################################################################
 # Helper script to load US population from census.gov
+# Save result into the '../../common/us/population.csv' file
 #
 # #############################################################################
 import codecs

@@ -2,6 +2,7 @@
 # #############################################################################
 # Helper script to generate world/population.csv file
 # * Download population data from population.un.org
+# Save result into the '../../common/population.csv' file
 #
 # #############################################################################
 import codecs

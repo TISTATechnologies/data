@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # #############################################################################
-# Convert zips.csv file into the directory with the zips splitted by zone in csv files.
+# Converting zips.csv file into the directory with the files where zips split by zone.
 #
 # Usage: create-us-zips-cache-directory [output]
-#   output - directory where "zips" directory will be created (default: current)
+#   output - path where "zips" directory will be created (default: current)
 # Example:
-#   All 208xx zips will be copied into the /2/208.csv file
+#   All 208xx zips will be transformed into the /2/208.csv file
 #
 # #############################################################################
 import codecs

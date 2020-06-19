@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # #############################################################################
-## Deploy all files from the specific directory to the AWS S3 Bucket
+## Deploy file/directory to the AWS S3 Bucket
 ## Usage: {SCRIPT_NAME} <source path> <bucket> [target directory]
 ##
 ## System environment:

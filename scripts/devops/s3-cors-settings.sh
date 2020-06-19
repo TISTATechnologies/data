@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-bucket=${1:-"${S3_BUCKET:-"data.tistatech.com"}"}
+# #############################################################################
+# Helper script to change CORS setting for Static Site hosted on AWS S3 Bucket.
+# Allow everybody to use it without a restriction.
+#
+# Usage s3-cors-settings.sh <s3 bucket name>
+# #############################################################################
+bucket=${1:-"${S3_BUCKET:-"data-dev.tistatech.com"}"}
 
 echo "This script to update CORS settings for ${bucket} S3 bucket"
 read -p "Do you want to continue (y/N)? " opt
@@ -31,4 +37,3 @@ echo "2. Allowed HTTP Methods: [*] GET,HEAD, OPTIONS"
 echo "3. Cached HTTP Methods: [X] OPTIONS"
 echo "4. Whitelist Headers: Origin"
 echo "-----------------------------"
-
