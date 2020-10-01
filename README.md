@@ -53,6 +53,8 @@ You can use system environment variables to customize deploy process:
     - [Census.org - Cartographic Boundary Files](https://www2.census.gov/geo/tiger/GENZ2010/)
 * Countries:
     - [Wikipedia ISO 3166-1 page](https://en.wikipedia.org/wiki/ISO_3166-1#Officially_assigned_code_elements)
+* US Areas
+    - [Washington D.C. area](https://en.wikipedia.org/wiki/Washington_metropolitan_area)
 
 ## License
 

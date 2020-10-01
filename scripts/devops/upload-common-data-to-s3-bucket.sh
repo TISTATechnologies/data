@@ -3,7 +3,7 @@
 ## Upload all data from the build/common directory to the s3 bucket
 ## Usage: upload-common-to-s3-bucket <s3 bucket name>
 # #############################################################################
-version=${VERSION:-"1"}
+version=${VERSION:-"2"}
 bucket=${1:-"${S3_BUCKET:-"data-dev.tistatech.com"}"}
 
 cd $(dirname "${0}")/../..

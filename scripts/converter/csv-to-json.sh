@@ -9,6 +9,7 @@
 # Requirements:
 #   jq, csvtojson
 # #############################################################################
+set -o pipefail
 debug() { if [ "${DEBUG}" == "true" ]; then >&2 echo $@; fi; }
 
 src=${1:-"--help"}
@@ -27,9 +28,11 @@ convert_file() {
     else output_dir=; fi
     if [ "${MINIFY}" == "true" ]; then minify="-c"; else minify=; fi
     json_file="${output_dir}${csv_file%.*}.json"
-    debug "Converting ${csv_file} -> ${json_file}"
+    debug "Converting ${csv_file} -> ${json_file} (MINIFY=${MINIFY:-"false"})"
     mkdir -p "$(dirname "${json_file}")" 2>/dev/null
-    csvtojson "${csv_file}" | jq ${minify} > "${json_file}" && echo "Convert ${csv_file} -> ${json_file} complete"
+    # jq-1.5 has an error with pipeout without arguments. The '.' is necessary.
+    csvtojson "${csv_file}" | jq . ${minify} > "${json_file}" || exit 1
+    echo "Convert ${csv_file} -> ${json_file} complete" || exit 1
 }
 
 

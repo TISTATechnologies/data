@@ -1,0 +1,25 @@
+[
+    {
+        "fips": "USDC1",
+        "name": "Washington D.C. Metro Area",
+        "description": "Washington D.C. Metropolitan Area",
+        "latitude": "38.91706",
+        "longitude": "-77.00025",
+        "counties": [
+            {"fips": "11001", "name": "District of Columbia"},
+            {"fips": "24017", "name": "Charles County"},
+            {"fips": "24021", "name": "Frederick County"},
+            {"fips": "24031", "name": "Montgomery County"},
+            {"fips": "24033", "name": "Prince George's County"},
+            {"fips": "51510", "name": "Alexandria city"},
+            {"fips": "51013", "name": "Arlington County"},
+            {"fips": "51059", "name": "Fairfax County"},
+            {"fips": "51600", "name": "Fairfax city"},
+            {"fips": "51610", "name": "Falls Church city"},
+            {"fips": "51107", "name": "Loudoun County"},
+            {"fips": "51683", "name": "Manassas city"},
+            {"fips": "51685", "name": "Manassas Park city"},
+            {"fips": "51153", "name": "Prince William County"}
+        ]
+    }
+]
