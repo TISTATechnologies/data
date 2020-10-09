@@ -3220,4 +3220,9 @@ fips,state_id,name,latitude,longitude
 72149,PR,Villalba Municipio,18.120519,-66.496607
 72151,PR,Yabucoa Municipio,18.228959,-66.049364
 72153,PR,Yauco Municipio,18.06104,-66.861164
-USDC1,US,Washington D.C. Metro Area,38.91706,-77.00025
+USCA1,US,San Francisco Bay Area,37.805344,-122.408162
+USDC1,US,Washington D.C. Metropolitan Area,38.91706,-77.00025
+USIL1,US,Chicago Metropolitan Area,42.304727,-89.902075
+USNY1,US,New York Metropolitan Area,40.702898,-74.010241
+USPA1,US,Philadelphia Metropolitan Area,40.014893,-75.078167
+USTX1,US,Greater Austin,31.189667,-97.022728

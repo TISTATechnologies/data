@@ -1,19 +1,25 @@
 #!/usr/bin/env bash
 show_help() {
     echo "Calculate/build dat for a custom us area."
-    echo "Usage: $(basename "${0}") <area fips>"
+    echo "Usage: $(basename "${0}") <area fips|list>"
     exit 1
 }
 
 AREA_FIPS=${1:-"--help"}
 if [ "${AREA_FIPS}" == "--help" ]; then show_help; fi
 cd "$(dirname "${0}")"
-echo "Working directory ${PWD}"
 
 area_file=../../../common/us/areas.json
 counties_file=../../../common/us/counties.csv
 population_file=../../../common/us/population.csv
 zips_file=../../../common/us/zips.csv
+
+if [ "${AREA_FIPS}" == "list" ]; then
+    echo "There are all arreas from the ${area_file} file"
+    jq -c '.[] | [.fips, .name]' "${area_file}" | sed 's/\[/* /g' | sed 's/\]//g' | sed 's/","/ - /g' | sed 's/"//g'
+    exit 0
+fi
+echo "Working directory ${PWD}"
 echo "Processing ${AREA_FIPS} custom us area (file: ${area_file})..."
 full_info=$(jq -r '.[] | select(.fips == "'${AREA_FIPS}'")' "${area_file}")
 if [ -z "${full_info}" ]; then echo "Error: area '${AREA_FIPS}' not found."; exit 1; fi
