@@ -107,8 +107,8 @@
         "name": "New York Metropolitan Area",
         "short_name": "NY Area",
         "description": "The metropolitan area includes New York City, Long Island, and the Mid and Lower Hudson Valley in New York State; the five largest cities in New Jersey: Newark, Jersey City, Paterson, Elizabeth, and Edison, and their vicinities; and six cities in Connecticut: Bridgeport, New Haven, Stamford, Waterbury, Norwalk, and Danbury, and their vicinities",
-        "latitude": "40.702898",
-        "longitude": "-74.010241",
+        "latitude": "42.621296",
+        "longitude": "-74.561289",
         "counties": [
             {"fips": "36061", "name": "New York County,NY"},
             {"fips": "36047", "name": "Kings County,NY"},
